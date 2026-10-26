@@ -141,18 +141,47 @@
       <div class="pointer-events-none absolute -right-40 -top-40 h-[34rem] w-[34rem] rounded-full bg-ice-300/30 blur-3xl" aria-hidden="true"></div>
       <div id="snow" class="pointer-events-none absolute inset-0" aria-hidden="true"></div>
 
-      <div class="relative mx-auto grid w-full max-w-7xl flex-1 items-center gap-10 px-4 py-8 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8 lg:py-12">
+
+      <div class="relative mx-auto grid w-full max-w-7xl flex-1 content-start items-center gap-10 px-4 pb-8 pt-5 sm:px-6 sm:py-8 lg:content-center lg:grid-cols-12 lg:gap-12 lg:px-8 lg:py-12 short:py-6">
 
         <!-- Left: headline -->
         <div class="lg:col-span-7">
+          <!-- Mobile / tablet: mini condensing unit with spinning fan, refrigerant
+               pipes running off-screen and ice cubes (full scene shows on desktop) -->
+          <svg class="pointer-events-none -mt-2 mb-3 ml-auto block h-[96px] w-[220px] [mask-image:linear-gradient(to_right,transparent,black_35%)] sm:mb-6 sm:h-[130px] sm:w-[298px] lg:hidden" viewBox="0 0 270 118" aria-hidden="true">
+            <g fill="none" stroke-linecap="round">
+              <path d="M0 36H160" stroke="#123049" stroke-width="8"/>
+              <path class="flow" d="M0 36H160" stroke="#94c9ea" stroke-width="2.4"/>
+              <path d="M0 50H160" stroke="#c98a54" stroke-width="4.5"/>
+              <path class="flow flow-rev" d="M0 50H160" stroke="#fbe0c6" stroke-width="1.6"/>
+            </g>
+            <g stroke="#0c2135" stroke-linejoin="round">
+              <path d="M172 98v8M250 98v8M164 106h94" fill="none" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="158" y="14" width="104" height="84" rx="9" fill="#fff" stroke-width="2.5"/>
+              <path d="M169 28V86M175 28V86M181 28V86" fill="none" stroke-width="1.6" opacity=".3"/>
+              <circle cx="222" cy="56" r="33" fill="#f2f8fc" stroke-width="2.5"/>
+              <g transform="translate(222 56)">
+                <g class="spin-fan spin-fast"><circle r="30" fill="none" stroke="none"/>
+                  <path d="M0 0C4-9 16-21 28-13C27-5 13-1 0 0Z" fill="#c4e1f3" stroke-width="1.6"/>
+                  <path d="M0 0C4-9 16-21 28-13C27-5 13-1 0 0Z" transform="rotate(120)" fill="#c4e1f3" stroke-width="1.6"/>
+                  <path d="M0 0C4-9 16-21 28-13C27-5 13-1 0 0Z" transform="rotate(240)" fill="#c4e1f3" stroke-width="1.6"/>
+                </g>
+                <circle r="5" fill="#0c2135" stroke="none"/>
+              </g>
+              <path d="M189 56H255M222 23V89" fill="none" stroke-width="1.2" opacity=".25"/>
+              <circle class="led" cx="250" cy="22" r="2" fill="#34d399" stroke="none"/>
+            </g>
+            <g class="ice"><g transform="translate(96 84) scale(1.05) rotate(-10)"><path d="M0-15 13-7.5 0 0-13-7.5Z" fill="#fff"/><path d="M-13-7.5 0 0V15L-13 7.5Z" fill="#e3f0f9"/><path d="M0 0 13-7.5V7.5L0 15Z" fill="#c4e1f3"/><path d="M0-15 13-7.5V7.5L0 15-13 7.5V-7.5ZM0 0V15M0 0 13-7.5M0 0-13-7.5" fill="none" stroke="#2f8cd0" stroke-width="1.4" stroke-linejoin="round"/><path d="M-6-9.5 0-12.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></g></g>
+            <g class="ice [animation-delay:-2.2s]"><g transform="translate(134 100) scale(.7) rotate(12)"><path d="M0-15 13-7.5 0 0-13-7.5Z" fill="#fff"/><path d="M-13-7.5 0 0V15L-13 7.5Z" fill="#e3f0f9"/><path d="M0 0 13-7.5V7.5L0 15Z" fill="#c4e1f3"/><path d="M0-15 13-7.5V7.5L0 15-13 7.5V-7.5ZM0 0V15M0 0 13-7.5M0 0-13-7.5" fill="none" stroke="#2f8cd0" stroke-width="1.4" stroke-linejoin="round"/><path d="M-6-9.5 0-12.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></g></g>
+          </svg>
           <p class="eyebrow reveal">Guernsey · Commercial refrigeration</p>
-          <h1 class="reveal mt-4 font-display text-[2.85rem] font-semibold uppercase leading-[0.98] tracking-wide text-navy-900 sm:text-6xl lg:text-7xl xl:text-[5.25rem]" style="--d:80ms">
+          <h1 class="reveal mt-4 font-display text-[2.85rem] font-semibold uppercase leading-[0.98] tracking-wide text-navy-900 sm:text-6xl lg:text-7xl xl:text-[5.25rem] short:text-6xl" style="--d:80ms">
             Serviced.<br>Supplied.<br><span class="text-ice-500">Repaired.</span>
           </h1>
-          <p class="reveal mt-5 max-w-xl text-base leading-relaxed text-navy-900/75 sm:text-lg" style="--d:160ms">
+          <p class="reveal mt-5 max-w-xl text-base leading-relaxed text-navy-900/75 sm:text-lg short:mt-4 short:text-base" style="--d:160ms">
             We look after commercial refrigeration systems across Guernsey – from cold rooms and ice makers to catering, display and medical refrigeration, plus onsite vehicle air conditioning.
           </p>
-          <div class="reveal mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap" style="--d:240ms">
+          <div class="reveal mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap short:mt-5" style="--d:240ms">
             <a href="tel:+447781136118" class="btn-primary">
               <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
               <span class="sm:hidden">Call us</span><span class="hidden sm:inline">Call 07781 136118</span>
@@ -161,39 +190,133 @@
           </div>
 
           <!-- The bear walks in along the "ice" while drawing itself -->
-          <div class="mt-8 flex items-end gap-4 sm:gap-6 lg:mt-12">
-            <div class="bear-walk relative w-[58%] max-w-[360px] sm:w-[340px]" aria-hidden="true">
+          <div class="mt-8 flex items-end gap-4 sm:gap-6 lg:mt-12 short:mt-5">
+            <div class="bear-walk relative w-[58%] max-w-[360px] sm:w-[340px] short:w-[250px]" aria-hidden="true">
               <svg viewBox="-10 -10 866 502" class="block w-full text-graphite-600">
                 <path class="bear-path" pathLength="1" d="M179,75 L181,43 L167,40 L150,45 M71,39 L77,45 M478,335 L510,336 M309,293 L324,304 L404,397 L407,412 L404,439 L365,452 L360,463 L363,473 L450,476 L457,474 L481,454 M392,86 L376,84 L166,22 L155,13 L140,18 L83,21 L69,32 L22,45 L15,53 M25,92 L54,92 M177,192 L166,182 L33,103 L24,93 M177,193 L173,228 L99,400 L91,409 L51,424 L42,433 L37,451 M482,453 L486,436 M394,86 L535,65 L668,112 L763,315 L816,365 L834,409 L831,455 L828,458 L791,461 L763,433 L635,356 L622,352 M309,292 L306,282 L271,235 M25,457 L37,451 M486,436 L477,336 M486,436 L516,428 L522,416 L511,337 M448,175 L399,102 L393,87 M458,242 L477,334 M15,54 L12,62 L14,87 L23,92 M621,353 L607,445 L592,464 L517,466 L504,464 L483,454 M308,293 L284,296 L143,452 L37,451 M512,336 L596,334 L614,342 L621,351" fill="none" stroke="currentColor" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
               </svg>
               <div class="mt-1 h-px w-[130%] bg-gradient-to-r from-transparent via-graphite-400/60 to-transparent"></div>
             </div>
             <!-- Live-looking thermostat readout -->
-            <div class="reveal mb-3 rounded-2xl border border-white/70 bg-white/80 px-4 py-3 shadow-frost backdrop-blur" style="--d:900ms">
+            <div class="reveal mb-3 flex items-center gap-3 rounded-2xl border border-white/70 bg-white/80 px-4 py-3 shadow-frost backdrop-blur" style="--d:900ms">
+              <!-- little evaporator fan, spinning -->
+              <svg class="hidden h-11 w-11 shrink-0 text-navy-900 sm:block" viewBox="-26 -26 52 52" aria-hidden="true">
+                <rect x="-24" y="-24" width="48" height="48" rx="10" fill="#f2f8fc" stroke="currentColor" stroke-width="2"/>
+                <g class="spin-fan"><circle r="19" fill="none"/>
+                  <path d="M0 0C3-7 12-17 19-11C19-4 10-1 0 0Z" fill="#94c9ea" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M0 0C3-7 12-17 19-11C19-4 10-1 0 0Z" transform="rotate(120)" fill="#94c9ea" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M0 0C3-7 12-17 19-11C19-4 10-1 0 0Z" transform="rotate(240)" fill="#94c9ea" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                </g>
+                <circle r="3.5" fill="currentColor"/>
+              </svg>
+              <div>
               <p class="flex items-center gap-1.5 whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.18em] text-graphite-500">
                 <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-ice-400 opacity-60"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-ice-500"></span></span>
                 Freezer room
               </p>
               <p class="mt-1 font-display text-3xl font-medium tabular-nums text-navy-900"><span data-temp-from="4" data-temp-to="-18">-18.0</span><span class="text-lg text-ice-500">°C</span></p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Right: real photo of the team + van -->
+        <!-- Right: animated refrigeration scene + team photo (desktop)
+             Display fridge with live temp, condensing unit with spinning fan,
+             refrigerant flowing through the pipework, cold air spilling out. -->
         <div class="relative hidden lg:col-span-5 lg:block">
-          <div class="reveal relative" style="--d:200ms">
-            <div class="absolute -inset-3 rotate-2 rounded-[2rem] bg-gradient-to-br from-ice-300/50 to-navy-900/10" aria-hidden="true"></div>
-            <picture>
-              <source srcset="/images/team-van.webp" type="image/webp">
-              <img src="/images/team-van.jpg" alt="The Bailiwick Refrigeration team standing beside their white service van on the Guernsey coast" width="959" height="959" fetchpriority="high" class="relative aspect-square w-full rounded-[1.75rem] object-cover shadow-lift">
-            </picture>
-            <div class="animate-floaty absolute -left-8 bottom-10 rounded-2xl bg-white px-4 py-3 shadow-lift">
+          <div class="reveal relative mx-auto aspect-[560/600] w-full max-w-[560px] short:max-w-[min(560px,calc((100svh_-_6.5rem)*0.93))]" style="--d:200ms">
+            <svg viewBox="0 0 560 600" class="absolute inset-0 h-full w-full overflow-visible" aria-hidden="true">
+              <defs>
+                <linearGradient id="hero-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3f0f9"/><stop offset="1" stop-color="#b9daf0"/></linearGradient>
+                <linearGradient id="hero-led" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#94c9ea" stop-opacity=".85"/><stop offset="1" stop-color="#94c9ea" stop-opacity="0"/></linearGradient>
+              </defs>
+
+              <!-- floor shadows -->
+              <ellipse cx="150" cy="552" rx="125" ry="10" fill="#0c2135" opacity=".08"/>
+
+              <!-- ── Pipework: insulated suction line + copper liquid line ── -->
+              <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M180 110V54Q180 40 194 40H386Q400 40 400 54V80" stroke="#123049" stroke-width="12"/>
+                <path class="flow" d="M180 110V54Q180 40 194 40H386Q400 40 400 54V80" stroke="#94c9ea" stroke-width="3"/>
+                <path d="M206 110V70Q206 58 218 58H372Q384 58 384 70V80" stroke="#c98a54" stroke-width="6"/>
+                <path class="flow flow-rev" d="M206 110V70Q206 58 218 58H372Q384 58 384 70V80" stroke="#fbe0c6" stroke-width="2"/>
+              </g>
+
+              <!-- ── Condensing unit ── -->
+              <g stroke="#0c2135" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M322 240v14M498 240v14M306 254h208" fill="none" stroke-width="3"/>
+                <rect x="300" y="80" width="220" height="160" rx="12" fill="#fff" stroke-width="3"/>
+                <path d="M318 104V216M327 104V216M336 104V216M345 104V216M354 104V216M363 104V216" fill="none" stroke-width="2" opacity=".3"/>
+                <circle cx="440" cy="160" r="62" fill="#f2f8fc" stroke-width="3"/>
+                <g transform="translate(440 160)">
+                  <g class="spin-fan spin-fast"><circle r="50" fill="none" stroke="none"/>
+                    <path d="M0 0C6-15 26-34 46-22C45-8 22-2 0 0Z" fill="#c4e1f3" stroke-width="2"/>
+                    <path d="M0 0C6-15 26-34 46-22C45-8 22-2 0 0Z" transform="rotate(120)" fill="#c4e1f3" stroke-width="2"/>
+                    <path d="M0 0C6-15 26-34 46-22C45-8 22-2 0 0Z" transform="rotate(240)" fill="#c4e1f3" stroke-width="2"/>
+                  </g>
+                  <circle r="9" fill="#0c2135" stroke="none"/>
+                </g>
+                <g fill="none" stroke-width="1.5" opacity=".28"><circle cx="440" cy="160" r="48"/><circle cx="440" cy="160" r="33"/><path d="M378 160H502M440 98V222"/></g>
+                <rect x="482" y="90" width="26" height="8" rx="2" fill="#0c2135" stroke="none" opacity=".85"/>
+                <circle class="led" cx="489" cy="94" r="2.2" fill="#34d399" stroke="none"/>
+              </g>
+              <!-- warm air leaving the condenser -->
+              <g fill="none" stroke="#e8936a" stroke-width="2.5" stroke-linecap="round" opacity=".7">
+                <path class="heat" d="M530 128q6 8 0 16t0 16"/>
+                <path class="heat [animation-delay:-.8s]" d="M542 140q6 8 0 16t0 16"/>
+                <path class="heat [animation-delay:-1.6s]" d="M530 166q6 8 0 16t0 16"/>
+              </g>
+
+              <!-- ── Glass-door display fridge ── -->
+              <g stroke="#0c2135" stroke-linejoin="round">
+                <rect x="50" y="110" width="200" height="430" rx="14" fill="#fff" stroke-width="3"/>
+                <path d="M50 162H250" stroke-width="3"/>
+                <g transform="translate(62 125) scale(0.062)"><path d="M179,75 L181,43 L167,40 L150,45 M71,39 L77,45 M478,335 L510,336 M309,293 L324,304 L404,397 L407,412 L404,439 L365,452 L360,463 L363,473 L450,476 L457,474 L481,454 M392,86 L376,84 L166,22 L155,13 L140,18 L83,21 L69,32 L22,45 L15,53 M25,92 L54,92 M177,192 L166,182 L33,103 L24,93 M177,193 L173,228 L99,400 L91,409 L51,424 L42,433 L37,451 M482,453 L486,436 M394,86 L535,65 L668,112 L763,315 L816,365 L834,409 L831,455 L828,458 L791,461 L763,433 L635,356 L622,352 M309,292 L306,282 L271,235 M25,457 L37,451 M486,436 L477,336 M486,436 L516,428 L522,416 L511,337 M448,175 L399,102 L393,87 M458,242 L477,334 M15,54 L12,62 L14,87 L23,92 M621,353 L607,445 L592,464 L517,466 L504,464 L483,454 M308,293 L284,296 L143,452 L37,451 M512,336 L596,334 L614,342 L621,351" fill="none" stroke="#5a5a5a" stroke-width="30" stroke-linecap="round"/></g>
+                <rect x="150" y="122" width="88" height="28" rx="6" fill="#0c2135" stroke="none"/>
+                <text x="194" y="142.5" text-anchor="middle" fill="#94c9ea" stroke="none" font-family="Oswald, sans-serif" font-size="17" letter-spacing=".5"><tspan data-temp-from="12" data-temp-to="3">3.0</tspan>°C</text>
+                <!-- glass + LED light -->
+                <rect x="66" y="176" width="168" height="318" rx="6" fill="url(#hero-glass)" stroke-width="2.5"/>
+                <rect class="led-strip" x="68" y="178" width="164" height="46" fill="url(#hero-led)" stroke="none"/>
+                <rect class="led-strip" x="72" y="178" width="156" height="3.5" rx="1.75" fill="#5aaadd" stroke="none"/>
+                <!-- shelves + stock -->
+                <g stroke-width="2"><rect x="80" y="222" width="16" height="36" rx="5" fill="#2f8cd0"/><rect x="85" y="210" width="6" height="13" rx="1.5" fill="#2f8cd0"/><rect x="83.5" y="206" width="9" height="5" rx="1.5" fill="#0c2135"/><rect x="104" y="222" width="16" height="36" rx="5" fill="#ffffff"/><rect x="109" y="210" width="6" height="13" rx="1.5" fill="#ffffff"/><rect x="107.5" y="206" width="9" height="5" rx="1.5" fill="#0c2135"/><rect x="128" y="222" width="16" height="36" rx="5" fill="#94c9ea"/><rect x="133" y="210" width="6" height="13" rx="1.5" fill="#94c9ea"/><rect x="131.5" y="206" width="9" height="5" rx="1.5" fill="#0c2135"/><rect x="152" y="222" width="16" height="36" rx="5" fill="#2f8cd0"/><rect x="157" y="210" width="6" height="13" rx="1.5" fill="#2f8cd0"/><rect x="155.5" y="206" width="9" height="5" rx="1.5" fill="#0c2135"/><rect x="176" y="222" width="16" height="36" rx="5" fill="#ffffff"/><rect x="181" y="210" width="6" height="13" rx="1.5" fill="#ffffff"/><rect x="179.5" y="206" width="9" height="5" rx="1.5" fill="#0c2135"/><rect x="200" y="222" width="16" height="36" rx="5" fill="#94c9ea"/><rect x="205" y="210" width="6" height="13" rx="1.5" fill="#94c9ea"/><rect x="203.5" y="206" width="9" height="5" rx="1.5" fill="#0c2135"/></g>
+                <g stroke-width="2"><rect x="82" y="308" width="24" height="30" rx="3" fill="#ffffff"/><path d="M82 316h24"/><rect x="110" y="308" width="24" height="30" rx="3" fill="#94c9ea"/><path d="M110 316h24"/><rect x="138" y="308" width="24" height="30" rx="3" fill="#2f8cd0"/><path d="M138 316h24"/><rect x="166" y="308" width="24" height="30" rx="3" fill="#ffffff"/><path d="M166 316h24"/><rect x="194" y="308" width="24" height="30" rx="3" fill="#94c9ea"/><path d="M194 316h24"/></g>
+                <g stroke-width="2"><path d="M80 418v-30l6-9h16l6 9v30z" fill="#ffffff"/><path d="M80 388h28"/><path d="M116 418v-30l6-9h16l6 9v30z" fill="#c4e1f3"/><path d="M116 388h28"/><path d="M152 418v-30l6-9h16l6 9v30z" fill="#ffffff"/><path d="M152 388h28"/><path d="M188 418v-30l6-9h16l6 9v30z" fill="#5aaadd"/><path d="M188 388h28"/></g>
+                <g stroke-width="2"><rect x="76" y="462" width="72" height="32" rx="3" fill="#fff"/><path d="M76 472h72M100 462v10M124 462v10"/><rect x="154" y="468" width="72" height="26" rx="3" fill="#c4e1f3"/><path d="M154 478h72"/></g>
+                <path d="M70 258H230M70 338H230M70 418H230" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- glass reflections + frost -->
+                <path d="M96 190 76 236M128 190 78 300" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".55"/>
+                <g transform="translate(214 196)" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M0-9V9M-7.8-4.5 7.8 4.5M7.8-4.5-7.8 4.5M-3-7.5 0-5 3-7.5M-3 7.5 0 5 3 7.5"/></g>
+                <rect x="223" y="286" width="7" height="96" rx="3.5" fill="#0c2135" stroke="none"/>
+                <!-- kickplate grille + feet -->
+                <path d="M84 510H216M84 520H216" stroke-width="2.5" stroke-linecap="round" opacity=".35"/>
+                <rect x="64" y="540" width="18" height="8" rx="2" fill="#0c2135" stroke="none"/>
+                <rect x="218" y="540" width="18" height="8" rx="2" fill="#0c2135" stroke="none"/>
+              </g>
+              <!-- cold air rolling out along the floor -->
+              <g fill="none" stroke="#5aaadd" stroke-width="3" stroke-linecap="round">
+                <path class="breeze-l" d="M62 562c-10-6-20 6-30 0s-20 6-30 0"/>
+                <path class="breeze-l [animation-delay:-1.4s]" d="M74 576c-10-6-20 6-30 0s-20 6-30 0" opacity=".7"/>
+                <path class="breeze-r [animation-delay:-.7s]" d="M238 564c10-6 20 6 30 0s20 6 30 0"/>
+                <path class="breeze-r [animation-delay:-2.1s]" d="M226 578c10-6 20 6 30 0s20 6 30 0" opacity=".7"/>
+              </g>
+
+              <!-- floating ice cubes -->
+              <g class="ice"><g transform="translate(266 286) scale(1.25) rotate(-10)"><path d="M0-15 13-7.5 0 0-13-7.5Z" fill="#fff"/><path d="M-13-7.5 0 0V15L-13 7.5Z" fill="#e3f0f9"/><path d="M0 0 13-7.5V7.5L0 15Z" fill="#c4e1f3"/><path d="M0-15 13-7.5V7.5L0 15-13 7.5V-7.5ZM0 0V15M0 0 13-7.5M0 0-13-7.5" fill="none" stroke="#2f8cd0" stroke-width="1.4" stroke-linejoin="round"/><path d="M-6-9.5 0-12.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></g></g>
+              <g class="ice [animation-delay:-2s]"><g transform="translate(44 64) scale(1.05) rotate(8)"><path d="M0-15 13-7.5 0 0-13-7.5Z" fill="#fff"/><path d="M-13-7.5 0 0V15L-13 7.5Z" fill="#e3f0f9"/><path d="M0 0 13-7.5V7.5L0 15Z" fill="#c4e1f3"/><path d="M0-15 13-7.5V7.5L0 15-13 7.5V-7.5ZM0 0V15M0 0 13-7.5M0 0-13-7.5" fill="none" stroke="#2f8cd0" stroke-width="1.4" stroke-linejoin="round"/><path d="M-6-9.5 0-12.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></g></g>
+              <g class="ice [animation-delay:-3.4s]"><g transform="translate(540 34) scale(.85) rotate(-6)"><path d="M0-15 13-7.5 0 0-13-7.5Z" fill="#fff"/><path d="M-13-7.5 0 0V15L-13 7.5Z" fill="#e3f0f9"/><path d="M0 0 13-7.5V7.5L0 15Z" fill="#c4e1f3"/><path d="M0-15 13-7.5V7.5L0 15-13 7.5V-7.5ZM0 0V15M0 0 13-7.5M0 0-13-7.5" fill="none" stroke="#2f8cd0" stroke-width="1.4" stroke-linejoin="round"/><path d="M-6-9.5 0-12.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></g></g>
+            </svg>
+
+            <!-- Team photo, pinned into the scene -->
+            <div class="absolute left-[51%] top-[47.5%] w-[46%] rotate-3 rounded-[1.4rem] bg-white p-2 shadow-lift transition duration-500 hover:rotate-0">
+              <picture>
+                <source srcset="/images/team-van.webp" type="image/webp">
+                <img src="/images/team-van.jpg" alt="The Bailiwick Refrigeration team standing beside their white service van on the Guernsey coast" width="959" height="959" fetchpriority="high" class="aspect-square w-full rounded-[1rem] object-cover">
+              </picture>
+            </div>
+            <div class="animate-floaty absolute bottom-[-2%] right-[-2%] rounded-2xl bg-white px-4 py-3 shadow-lift">
               <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-ice-600">We come to you</p>
               <p class="mt-0.5 text-sm font-semibold text-navy-900">Onsite service &amp; repairs</p>
-            </div>
-            <div class="animate-floaty absolute -right-4 top-8 flex items-center gap-2 rounded-2xl bg-navy-900 px-4 py-3 text-white shadow-lift [animation-delay:-2.5s]">
-              <svg class="h-5 w-5 text-ice-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M4.9 6.5l14.2 11M19.1 6.5L4.9 17.5M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5"/></svg>
-              <span class="text-sm font-semibold">Guernsey based</span>
             </div>
           </div>
         </div>

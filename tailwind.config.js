@@ -9,6 +9,10 @@ module.exports = {
   content: ['./*.html', './assets/js/**/*.js'],
   theme: {
     extend: {
+      // "short" = laptop screens that are wide but not very tall (e.g. 1280×720)
+      screens: {
+        short: { raw: '(min-width: 1024px) and (max-height: 820px)' },
+      },
       colors: {
         // Deep navy – taken from the team uniforms
         navy: {

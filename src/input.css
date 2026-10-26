@@ -101,11 +101,43 @@
 #mobile-menu { transition: opacity .25s ease, transform .25s ease; }
 #mobile-menu[data-open="false"] { opacity: 0; transform: translateY(-8px); pointer-events: none; }
 
+/* ── Hero refrigeration scene ───────────────────────────────── */
+/* Fans: the hidden circle inside each fan group keeps the box centred on the hub */
+.spin-fan { transform-box: fill-box; transform-origin: center; animation: fan-spin 1.8s linear infinite; }
+.spin-fast { animation-duration: 1.1s; }
+@keyframes fan-spin { to { transform: rotate(360deg); } }
+
+/* Refrigerant moving through the pipework */
+.flow { stroke-dasharray: 6 14; animation: flow 1.1s linear infinite; }
+.flow-rev { animation-direction: reverse; }
+@keyframes flow { to { stroke-dashoffset: -40; } }
+
+/* Fridge LED light gently breathing + status LED blinking */
+.led-strip { animation: led 3.2s ease-in-out infinite; }
+@keyframes led { 0%, 100% { opacity: .7; } 50% { opacity: 1; } }
+.led { animation: blink 2.4s steps(1) infinite; }
+@keyframes blink { 0%, 80% { opacity: 1; } 81%, 100% { opacity: .15; } }
+
+/* Cold air rolling out of the fridge, warm air leaving the condenser */
+.breeze-l, .breeze-r, .heat { transform-box: fill-box; animation: 3s ease-out infinite; }
+.breeze-l { animation-name: breeze-l; }
+.breeze-r { animation-name: breeze-r; }
+.heat { animation-name: heat; animation-duration: 2.4s; }
+@keyframes breeze-l { 0% { opacity: 0; transform: translateX(14px); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateX(-30px); } }
+@keyframes breeze-r { 0% { opacity: 0; transform: translateX(-14px); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateX(30px); } }
+@keyframes heat { 0% { opacity: 0; transform: translate(-6px, 6px); } 30% { opacity: .8; } 100% { opacity: 0; transform: translate(10px, -14px); } }
+
+/* Ice cubes bobbing */
+.ice { animation: ice-bob 5.5s ease-in-out infinite; }
+@keyframes ice-bob { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-10px) rotate(4deg); } }
+.ice { transform-box: fill-box; transform-origin: center; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal, .bear-walk { opacity: 1 !important; transform: none !important; transition: none !important; }
   .draw *, .bear-walk .bear-path { stroke-dashoffset: 0 !important; transition: none !important; }
-  .flake, .animate-marquee, .animate-floaty { animation: none !important; }
+  .flake, .animate-marquee, .animate-floaty, .spin-fan, .flow, .led-strip, .led, .ice { animation: none !important; }
+  .breeze-l, .breeze-r, .heat { animation: none !important; opacity: .6; }
   .flake { display: none; }
   .gauge-needle { transition: none; }
 }
