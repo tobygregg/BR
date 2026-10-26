@@ -138,7 +138,7 @@
     const status = document.getElementById('form-status');
     const btn = form.querySelector('button[type="submit"]');
     const label = btn.querySelector('[data-label]');
-    form.querySelector('[name="_next"]').value = `${location.origin}/thanks.html`;
+    form.querySelector('[name="_next"]').value = new URL('thanks.html', location.href).href;
 
     const show = (msg, ok) => {
       status.textContent = msg;
