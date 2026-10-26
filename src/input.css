@@ -1,0 +1,111 @@
+/* ─────────────────────────────────────────────────────────────
+   Bailiwick Refrigeration – source styles
+   Edit this file, then run `npm run build` to regenerate
+   assets/css/styles.css (that's the file the site actually loads).
+   ───────────────────────────────────────────────────────────── */
+/* Self-hosted variable fonts (both SIL Open Font License) */
+@font-face { font-family: 'Oswald'; font-style: normal; font-display: swap; font-weight: 200 700; src: url('../fonts/oswald.woff2') format('woff2'); }
+@font-face { font-family: 'Manrope'; font-style: normal; font-display: swap; font-weight: 200 800; src: url('../fonts/manrope.woff2') format('woff2'); }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+  body { @apply bg-white font-sans text-navy-900 antialiased; }
+  ::selection { @apply bg-ice-200 text-navy-900; }
+  :focus-visible { @apply outline-none ring-2 ring-ice-500 ring-offset-2; }
+  /* Anchor targets sit below the sticky header */
+  section[id] { scroll-margin-top: 4.5rem; }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-[15px] font-bold
+           transition duration-200 ease-out active:scale-[.98];
+  }
+  .btn-primary { @apply btn bg-ice-500 text-white shadow-frost hover:bg-ice-600 hover:-translate-y-0.5; }
+  .btn-dark    { @apply btn bg-navy-900 text-white shadow-frost hover:bg-navy-800 hover:-translate-y-0.5; }
+  .btn-ghost   { @apply btn border border-navy-900/15 bg-white/70 text-navy-900 backdrop-blur hover:border-navy-900/30 hover:bg-white; }
+  .btn-light   { @apply btn bg-white text-navy-900 hover:bg-ice-50 hover:-translate-y-0.5; }
+
+  /* Small uppercase label above headings */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-display text-xs font-medium uppercase tracking-logo text-ice-600;
+  }
+  .eyebrow::before { content: ''; @apply h-px w-6 bg-current; }
+
+  .h2 { @apply font-display text-[2rem] font-semibold uppercase leading-[1.05] tracking-wide sm:text-5xl; }
+
+  /* Form fields */
+  .field {
+    @apply w-full rounded-xl border border-navy-900/15 bg-white px-4 py-3 text-[15px] text-navy-900
+           placeholder:text-graphite-400 transition focus:border-ice-500 focus:outline-none focus:ring-4 focus:ring-ice-500/15;
+  }
+  .label { @apply mb-1.5 block text-sm font-semibold text-navy-900; }
+
+  /* Nav links */
+  .nav-link { @apply relative py-2 text-[15px] font-semibold text-navy-900/80 transition hover:text-navy-900; }
+  .nav-link::after {
+    content: ''; @apply absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 rounded bg-ice-500 transition-transform duration-300;
+  }
+  .nav-link:hover::after, .nav-link.is-active::after { @apply scale-x-100; }
+
+  /* Line-art illustrations */
+  .lineart { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+}
+
+@layer utilities {
+  /* Faint frost grid used behind some sections */
+  .bg-frost-grid {
+    background-image:
+      linear-gradient(to right, rgba(47,140,208,.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(47,140,208,.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .text-balance { text-wrap: balance; }
+}
+
+/* ── Scroll reveal ──────────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* ── Self-drawing strokes (use pathLength="1" on the path) ─── */
+.draw path, .draw line, .draw polyline, .draw rect, .draw circle, .draw ellipse {
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.6s cubic-bezier(.65,0,.35,1);
+  transition-delay: var(--d, 0ms);
+}
+.draw.is-in path, .draw.is-in line, .draw.is-in polyline, .draw.is-in rect, .draw.is-in circle, .draw.is-in ellipse { stroke-dashoffset: 0; }
+
+/* ── Hero bear: walks in while it draws ─────────────────────── */
+.bear-walk { opacity: 0; transform: translateX(-12%); transition: transform 2.6s cubic-bezier(.2,.7,.2,1), opacity .8s ease; }
+.bear-walk.is-in { opacity: 1; transform: none; }
+.bear-walk .bear-path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 3s cubic-bezier(.65,0,.35,1) .2s; }
+.bear-walk.is-in .bear-path { stroke-dashoffset: 0; }
+
+/* ── Falling snow (generated in main.js) ───────────────────── */
+.flake { position: absolute; top: 0; pointer-events: none; color: #94c9ea; animation: fall linear infinite; }
+
+/* ── Gauge needle on the vehicle A/C section ───────────────── */
+.gauge-needle { transform-origin: 100px 100px; transform: rotate(-120deg); transition: transform 2.2s cubic-bezier(.3,1.4,.4,1) .3s; }
+.is-in .gauge-needle { transform: rotate(38deg); }
+
+/* ── Service cards: icon frosts over on hover ──────────────── */
+.svc-card .svc-icon { transition: transform .5s cubic-bezier(.2,.7,.2,1), color .3s; }
+.svc-card:hover .svc-icon { transform: translateY(-4px) scale(1.04); }
+
+/* ── Mobile menu ────────────────────────────────────────────── */
+#mobile-menu { transition: opacity .25s ease, transform .25s ease; }
+#mobile-menu[data-open="false"] { opacity: 0; transform: translateY(-8px); pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .bear-walk { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .draw *, .bear-walk .bear-path { stroke-dashoffset: 0 !important; transition: none !important; }
+  .flake, .animate-marquee, .animate-floaty { animation: none !important; }
+  .flake { display: none; }
+  .gauge-needle { transition: none; }
+}
